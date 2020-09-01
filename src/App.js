@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import ProtectedRoutes from "./Utils/Routers/ProtectedRoutes";
 import { Language } from "./Utils/Context/Context";
-import MainTheme from "./Utils/Themes/MainTheme";
-import { ThemeProvider } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Home from './views/Home/Home'
-import Login from './views/Login/Login'
+import Login from './views/Login/login'
 
 
 
@@ -14,7 +12,6 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={MainTheme}>
         <Language.Provider value={{ lang, setLang }}>
           <Router>
             <Switch>
@@ -24,7 +21,6 @@ function App() {
             </Switch>
           </Router>
         </Language.Provider>
-      </ThemeProvider>
     </>
   );
 }
